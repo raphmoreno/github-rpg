@@ -1,7 +1,7 @@
 import { GitHubEventType, XP_REWARDS, ExtensionMessage } from '../types';
 
-// Mock GitHub username for testing
-const GITHUB_USERNAME = 'octocat';
+// GitHub username for testing
+const GITHUB_USERNAME = 'raphmoreno';
 
 // Create and inject notification container
 function createNotificationContainer(): HTMLElement {
