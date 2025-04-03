@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GitHub RPG</title>
+  <link rel="stylesheet" href="../shared/style.css">
+  <style>
+    body {
+      width: 320px;
+      min-height: 400px;
+      margin: 0;
+      font-family: 'Press Start 2P', cursive;
+      background-color: #1E1E3F;
+      color: white;
+      padding: 0;
+      overflow-x: hidden;
+    }
+  </style>
+</head>
+<body>
+  <div class="p-4">
+    <!-- Header -->
+    <div class="text-center mb-6">
+      <h1 class="text-xl text-rpg-accent mb-2">GitHub RPG</h1>
+      <p class="text-xs text-rpg-light mb-4">Level up your coding quest!</p>
+    </div>
+    
+    <!-- Character Panel -->
+    <div class="rpg-panel mb-4 pixel-corners">
+      <div class="flex items-center mb-4">
+        <!-- Character Avatar -->
+        <div class="bg-rpg-dark rpg-border w-16 h-16 mr-4 flex items-center justify-center text-2xl" id="character-avatar">
+          🧙
+        </div>
+        
+        <!-- Character Info -->
+        <div>
+          <h2 class="text-rpg-dark text-sm mb-1" id="character-title">Noob</h2>
+          <p class="text-rpg-dark text-xs mb-1">
+            Level <span id="character-level">1</span>
+          </p>
+          <p class="text-rpg-dark text-xs">
+            XP: <span id="character-xp">0</span>/<span id="character-next-level">50</span>
+          </p>
+        </div>
+      </div>
+      
+      <!-- XP Progress Bar -->
+      <div class="rpg-progress">
+        <div class="rpg-progress-bar" id="xp-progress-bar" style="width: 0%"></div>
+      </div>
+    </div>
+    
+    <!-- Username Input -->
+    <div class="mb-4">
+      <label for="github-username" class="block text-xs mb-2 text-rpg-light">GitHub Username:</label>
+      <div class="flex">
+        <input 
+          type="text" 
+          id="github-username" 
+          class="bg-rpg-dark border-2 border-rpg-light text-white px-2 py-1 text-xs w-full mr-2" 
+          placeholder="octocat"
+        >
+        <button id="save-username" class="rpg-button text-xs">Save</button>
+      </div>
+    </div>
+    
+    <!-- Recent Activity -->
+    <div class="mb-4">
+      <h3 class="text-xs mb-2 text-rpg-light">Recent Activity:</h3>
+      <div class="rpg-panel h-32 overflow-y-auto text-rpg-dark">
+        <ul class="text-xs space-y-2" id="activity-list">
+          <li class="text-center py-4">No recent activity</li>
+        </ul>
+      </div>
+    </div>
+    
+    <!-- Action Buttons -->
+    <div class="flex justify-between">
+      <button id="refresh-button" class="rpg-button text-xs">Refresh</button>
+      <button id="reset-button" class="bg-red-700 text-white font-pixel px-4 py-2 border-4 border-rpg-dark shadow-pixel hover:bg-red-600 text-xs">Reset</button>
+    </div>
+  </div>
+  <script type="module" src="./index.js"></script>
+</body>
+</html> 

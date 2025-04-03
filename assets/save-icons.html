@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Save GitHub RPG Icons</title>
+  <style>
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      background: #f0f0f0;
+      color: #333;
+    }
+    h1 {
+      text-align: center;
+    }
+    button {
+      display: block;
+      margin: 20px auto;
+      padding: 10px 20px;
+      background: #4A2C8F;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #8F6FC5;
+    }
+    .icon-display {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+    .icon-container {
+      text-align: center;
+      background: white;
+      padding: 15px;
+      border-radius: 4px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    img {
+      display: block;
+      margin-bottom: 10px;
+      image-rendering: pixelated;
+    }
+  </style>
+</head>
+<body>
+  <h1>GitHub RPG Icons</h1>
+  <p>Click the button below to save the pre-generated pixel art icons to your device. These icons are encoded directly in this HTML page, so no server requests are needed.</p>
+  
+  <div class="icon-display">
+    <div class="icon-container">
+      <img id="icon16" width="16" height="16" alt="16×16 icon">
+      <span>16×16</span>
+    </div>
+    <div class="icon-container">
+      <img id="icon32" width="32" height="32" alt="32×32 icon">
+      <span>32×32</span>
+    </div>
+    <div class="icon-container">
+      <img id="icon48" width="48" height="48" alt="48×48 icon">
+      <span>48×48</span>
+    </div>
+    <div class="icon-container">
+      <img id="icon128" width="128" height="128" alt="128×128 icon">
+      <span>128×128</span>
+    </div>
+  </div>
+  
+  <button id="save-icons">Save All Icons</button>
+  
+  <script type="module">
+    import { ICON_16, ICON_32, ICON_48, ICON_128, saveAllIcons } from './icon-base64.js';
+    
+    // Display the images
+    document.getElementById('icon16').src = ICON_16;
+    document.getElementById('icon32').src = ICON_32;
+    document.getElementById('icon48').src = ICON_48;
+    document.getElementById('icon128').src = ICON_128;
+    
+    // Set up save button
+    document.getElementById('save-icons').addEventListener('click', () => {
+      saveAllIcons();
+      alert('Icons have been saved to your device!');
+    });
+  </script>
+</body>
+</html> 

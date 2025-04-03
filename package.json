@@ -1,22 +1,29 @@
 {
   "name": "github-rpg",
   "version": "1.0.0",
-  "description": "A Chrome extension that gamifies GitHub contributions with RPG elements",
+  "description": "A Chrome extension that gamifies GitHub contributions",
+  "main": "index.js",
   "scripts": {
-    "build": "tsc && npm run generate-assets",
-    "generate-assets": "ts-node scripts/generate-assets.ts",
-    "watch": "tsc --watch",
-    "dev": "npm run build && npm run watch",
-    "type-check": "tsc --noEmit"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "keywords": [
+    "chrome-extension",
+    "github",
+    "rpg",
+    "gamification"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@crxjs/vite-plugin": "^2.0.0-beta.18",
+    "tailwindcss": "^3.3.3",
+    "autoprefixer": "^10.4.15",
+    "postcss": "^8.4.29",
+    "vite": "^4.4.9"
   },
   "dependencies": {
-    "sharp": "^0.33.2"
-  },
-  "devDependencies": {
-    "@types/chrome": "^0.0.260",
-    "@types/node": "^20.11.24",
-    "@types/sharp": "^0.32.0",
-    "ts-node": "^10.9.2",
-    "typescript": "^5.3.3"
+    "toastify-js": "^1.12.0"
   }
 } 
