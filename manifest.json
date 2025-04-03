@@ -1,0 +1,37 @@
+{
+  "manifest_version": 3,
+  "name": "GitHub RPG",
+  "version": "1.0.0",
+  "description": "Gamify your GitHub contributions with RPG elements!",
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting"
+  ],
+  "host_permissions": [
+    "https://api.github.com/*"
+  ],
+  "action": {
+    "default_popup": "dist/popup/popup.html",
+    "default_icon": {
+      "16": "assets/icons/icon16.png",
+      "48": "assets/icons/icon48.png",
+      "128": "assets/icons/icon128.png"
+    }
+  },
+  "background": {
+    "service_worker": "dist/background/index.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://github.com/*"],
+      "js": ["dist/content/index.js"],
+      "css": ["dist/content/index.css"]
+    }
+  ],
+  "icons": {
+    "16": "assets/icons/icon16.png",
+    "48": "assets/icons/icon48.png",
+    "128": "assets/icons/icon128.png"
+  }
+} 

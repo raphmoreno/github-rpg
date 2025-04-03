@@ -1,0 +1,22 @@
+{
+  "name": "github-rpg",
+  "version": "1.0.0",
+  "description": "A Chrome extension that gamifies GitHub contributions with RPG elements",
+  "scripts": {
+    "build": "tsc && npm run generate-assets",
+    "generate-assets": "ts-node scripts/generate-assets.ts",
+    "watch": "tsc --watch",
+    "dev": "npm run build && npm run watch",
+    "type-check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "sharp": "^0.33.2"
+  },
+  "devDependencies": {
+    "@types/chrome": "^0.0.260",
+    "@types/node": "^20.11.24",
+    "@types/sharp": "^0.32.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
+  }
+} 
